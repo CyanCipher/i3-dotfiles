@@ -189,6 +189,7 @@ mode "resize" {
 
 bindsym $mod+p mode "resize"
 bindsym $mod+Shift+l exec --no-startup-id "~/.config/i3/lock.sh"
+bindsym Mod+Tab fullscreen toggle; focus down; fullscreen toggle
 
 bar {
         status_command /usr/bin/bumblebee-status \
