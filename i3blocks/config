@@ -29,6 +29,14 @@ command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+# MEDIAPLAYER
+[mediaplayer]
+# This picks any player, with vlc as first, and spotify as last choice
+command=$SCRIPT_DIR/mediaplayer/mediaplayer
+instance=vlc,%any,spotify
+interval=5
+signal=10
+
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
@@ -44,6 +52,7 @@ signal=10
 color=#09c500
 separator=true
 #STEP=5%
+
 
 # Memory usage
 #
@@ -77,21 +86,21 @@ interval=30
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
-#[iface]
-##IFACE=wlan0
-#color=#00FF00
-#interval=10
-#separator=false
-#
-#[wifi]
-##INTERFACE=wlp3s0
-#label=wifi:
-#interval=10
-#separator=false
-#
-#[bandwidth]
-##INTERFACE=eth0
-#interval=5
+[iface]
+#IFACE=wlan0
+color=#00FF00
+interval=10
+separator=false
+
+[wifi]
+#INTERFACE=wlp3s0
+label=wifi:
+interval=10
+separator=false
+
+[bandwidth]
+#INTERFACE=eth0
+interval=5
 
 # CPU usage
 #
@@ -128,11 +137,6 @@ interval=1
 # This displays "ARTIST - SONG" if a music is playing.
 # Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
 # Set to %any to automatically pick (Requires playerctl >=2.1.1)
-#[mediaplayer]
-# This picks any player, with vlc as first, and spotify as last choice
-#instance=vlc,%any,spotify
-#interval=5
-#signal=10
 
 # OpenVPN support
 #

@@ -53,7 +53,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id wezterm
+bindsym $mod+Return exec --no-startup-id konsole
 
 # kill focused window
 bindsym $mod+q kill
@@ -219,11 +219,11 @@ client.background        $base
 for_window [class="^.*"] border pixel 1
 default_floating_border none
 default_floating_border normal 0
-hide_edge_borders smart
+#hide_edge_borders smart
 
-gaps inner 4
-gaps outer 2
-smart_gaps on
+gaps inner 2
+gaps outer 1
+smart_gaps off
 # Resize gaps
 bindsym $mod+z			gaps outer current plus 1
 bindsym $mod+Shift+z 	gaps outer current minus 1
@@ -231,6 +231,7 @@ bindsym $mod+x			gaps inner current plus 1
 bindsym $mod+Shift+x 	gaps inner current minus 1
 
 for_window [class=pavucontrol] floating enable, resize set 600 450, border pixel 1
+for_window [class=GLava] floating enable, resize set 170 745, border pixel 0, move right 950px, move up 70px
 for_window [class=Nm-connection-editor] floating enable, resize set 600 450, border pixel 1
 for_window [title="Save File"] floating enable, resize set 600 550, border pixel 1, move right 200px, move down 200px
 for_window [class=trayer] border pixel 0
@@ -251,3 +252,5 @@ exec --no-startup-id picom
 exec --no-startup-id xautolock -time 10 -locker ~/.config/i3/lock.sh
 exec --no-startup-id greenclip daemon
 exec --no-startup-id setxkbmap -option caps:swapescape
+exec --no-startup-id ~/Scripts/Music.sh
+exec --no-startup-id ~/Scripts/Mega.sh
